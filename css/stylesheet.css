@@ -1,0 +1,13 @@
+/* utf8-marker: äöüß */
+
+.roundabout {}
+
+.roundabout noscript div {
+    display: block;
+    text-align: center;
+    background: gold;
+    color: black;
+    padding: 1em;
+    border: 2px solid black;
+    margin: 1em;
+}

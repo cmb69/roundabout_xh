@@ -1,0 +1,8 @@
+TODO
+    improve onPicClick
+    showButtons true
+    include different Colorbox Styles (config option)
+    view whole gallery in Colorbox?
+
+Version 1beta1 - released 2012-03-02
+cmb	inital release
