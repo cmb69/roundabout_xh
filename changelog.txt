@@ -1,4 +1,5 @@
 TODO
+    2 separate folders (images/data) (reported by Joe)
     improve onPicClick
     showButtons true
     include different Colorbox Styles (config option)
