@@ -51,8 +51,7 @@ function roundabout_photos($album) {
  * @param int $album  The album/gallery ID.
  * @return string
  */
-function roundabout_json($album) { // TODO: create json file only if necessary
-// TODO: write json to own folder?? (drawback: can't use different galleries)
+function roundabout_json($album) {
     global $pth, $plugin_cf;
 
     $pcf = $plugin_cf['roundabout'];
@@ -71,13 +70,16 @@ function roundabout_json($album) { // TODO: create json file only if necessary
 	if ($i < count($albums) - 1) {$o .= ', ';}
     }
     $o .= ']'."\n".'}'."\n";
-    $fn = $pth['folder']['base'].$pcf['gallery_folder'].'data/roundabout_'.$album.'.json';
-    if (($fh = fopen($fn, 'w')) === FALSE || fwrite($fh, $o) === FALSE) {
-	e('cntwriteto', 'file', $fn);
-	$fn = NULL;
-    }
-    if ($fh !== FALSE) {fclose($fh);}
-    return $fn;
+//    $fn = $pth['folder']['base'].$pcf['gallery_folder'].'data/roundabout_'.$album.'.json';
+//    if (($fh = fopen($fn, 'w')) === FALSE || fwrite($fh, $o) === FALSE) {
+//	e('cntwriteto', 'file', $fn);
+//	$fn = NULL;
+//    }
+//    if ($fh !== FALSE) {fclose($fh);}
+//    return $fn;
+    header('Content-Type: text/plain; charset=UTF-8');
+    echo $o;
+    exit;
 }
 
 
@@ -98,8 +100,8 @@ function roundabout_js($album) {
     include_jqueryplugin('jCarousel', $pth['folder']['plugins'].'roundabout/lib/carousel-0.9.3.js');
     include_jqueryplugin('colorbox', $pth['folder']['plugins'].'roundabout/lib/jquery.colorbox-min.js');
     $show_title = $pcf['show_title'] ? 'true' : 'false';
-    $show_buttons = $pcf['show_buttons'] ? 'true' : 'false';
-    $json = roundabout_json($album);
+    //$show_buttons = $pcf['show_buttons'] ? 'true' : 'false';
+    $json = "$sn?&roundabout_json=$album";
     $imgdir = ROUNDABOUT_GALLERY_FOLDER.'images/';
     $hjs .= <<<SCRIPT
 
@@ -155,6 +157,11 @@ function roundabout($album) {
     $o = '<div id="roundabout_'.$album.'" class="roundabout"><noscript><div>'
 	    .$plugin_tx['roundabout']['message_noscript'].'</div></noscript></div>';
     return $o;
+}
+
+
+if (isset($_GET['roundabout_json'])) {
+    roundabout_json($_GET['roundabout_json']);
 }
 
 ?>
