@@ -54,15 +54,15 @@ function Roundabout_systemCheck()
 { // RELEASE-TODO
     global $pth, $tx, $plugin_tx;
 
-    define('ROUNDABOUT_PHP_VERSION', '4.0.7');
+    $phpVersion = '4.0.7';
     $ptx = $plugin_tx['roundabout'];
     $imgdir = $pth['folder']['plugins'] . 'roundabout/images/';
     $ok = tag('img src="' . $imgdir . 'ok.png" alt="ok"');
     $warn = tag('img src="' . $imgdir . 'warn.png" alt="warning"');
     $fail = tag('img src="' . $imgdir . 'fail.png" alt="failure"');
     $o = tag('hr') . '<h4>' . $ptx['syscheck_title'] . '</h4>'
-	. (version_compare(PHP_VERSION, ROUNDABOUT_PHP_VERSION) >= 0 ? $ok : $fail)
-	. '&nbsp;&nbsp;' . sprintf($ptx['syscheck_phpversion'], ROUNDABOUT_PHP_VERSION)
+	. (version_compare(PHP_VERSION, $phpVersion) >= 0 ? $ok : $fail)
+	. '&nbsp;&nbsp;' . sprintf($ptx['syscheck_phpversion'], $phpVersion)
 	. tag('br') . tag('br');
     foreach (array() as $ext) {
 	$o .= (extension_loaded($ext) ? $ok : $fail)
