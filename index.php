@@ -139,7 +139,6 @@ function Roundabout_init($album)
     }
     $pcf = $plugin_cf['roundabout'];
     $show_title = $pcf['show_title'] ? 'true' : 'false';
-    //$show_buttons = $pcf['show_buttons'] ? 'true' : 'false';
     $json = "$sn?&roundabout_json=$album";
     $imgdir = ROUNDABOUT_GALLERY_FOLDER . 'images/';
     return <<<SCRIPT
@@ -154,7 +153,6 @@ jQuery(function() {
 	perspecitve: $pcf[perspective],
 	dynamic: $pcf[dynamic],
 	showTitle: $show_title,
-	//showButtons: $show_buttons,
 	jsonScript : '$json',
 	reflection: $pcf[reflection],
 	reflectionStart: $pcf[reflection_start],
