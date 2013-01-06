@@ -20,14 +20,20 @@ if (!defined('CMSIMPLE_XH_VERSION')) {
 /**
  * Returns the plugin version information view.
  *
+ * @global array
  * @return string  The (X)HTML.
  */
 function Roundabout_version()
 {
+    global $pth;
+
     return '<h1><a href="http://3-magi.net/?CMSimple_XH/Roundabout_XH">Roundabout_XH</a></h1>'
+        . tag('img src="' . $pth['folder']['plugins']
+	      . 'roundabout/roundabout.png" style="float:left; margin-right: 1em"')
 	. '<p>Version: ' . ROUNDABOUT_VERSION . '</p>'
 	. '<p>Copyright &copy; 2012 <a href="http://3-magi.net">Christoph M. Becker</a></p>'
-	. '<p>Roundabout_XH is powered by <a href="http://www.jcarousel.de/">jQuery Carousel</a>.</p>'
+	. '<p>Roundabout_XH is powered by <a href="http://www.jcarousel.de/">jQuery Carousel</a>'
+	. ' and <a href="http://www.jacklmoore.com/colorbox">ColorBox</a>.</p>'
 	. '<p style="text-align: justify">This program is free software: you can redistribute it and/or modify'
 	. ' it under the terms of the GNU General Public License as published by'
 	. ' the Free Software Foundation, either version 3 of the License, or'
