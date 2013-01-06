@@ -105,16 +105,20 @@ function Roundabout_json($album) // TODO: use json_encode
 function Roundabout_js($album)
 {
     global $pth, $hjs, $sn, $plugin_cf;
+    static $again = false;
 
+    if (!$again) {
+	include_once $pth['folder']['plugins'] . 'jquery/jquery.inc.php';
+	include_jQuery();
+	$hjs .= tag('link rel="stylesheet" href="' . $pth['folder']['plugins']
+		    . 'roundabout/css/colorbox.css" type="text/css"');
+	include_jQueryPlugin('jCarousel', $pth['folder']['plugins']
+			     . 'roundabout/lib/carousel-0.9.3.js');
+	include_jQueryPlugin('colorbox', $pth['folder']['plugins']
+			     . 'roundabout/lib/jquery.colorbox-min.js');
+	$again = true;
+    }
     $pcf = $plugin_cf['roundabout'];
-    include_once $pth['folder']['plugins'] . 'jquery/jquery.inc.php';
-    include_jQuery();
-    $hjs .= tag('link rel="stylesheet" href="' . $pth['folder']['plugins']
-		. 'roundabout/css/colorbox.css" type="text/css"');
-    include_jQueryPlugin('jCarousel', $pth['folder']['plugins']
-			 . 'roundabout/lib/carousel-0.9.3.js');
-    include_jQueryPlugin('colorbox', $pth['folder']['plugins']
-			 . 'roundabout/lib/jquery.colorbox-min.js');
     $show_title = $pcf['show_title'] ? 'true' : 'false';
     //$show_buttons = $pcf['show_buttons'] ? 'true' : 'false';
     $json = "$sn?&roundabout_json=$album";
