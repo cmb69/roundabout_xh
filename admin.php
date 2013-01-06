@@ -15,9 +15,6 @@ if (!defined('CMSIMPLE_XH_VERSION')) {
 }
 
 
-define('ROUNDABOUT_VERSION', '1beta1');
-
-
 /**
  * Returns the plugin version information view.
  *
