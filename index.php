@@ -97,33 +97,47 @@ function Roundabout_json($album) // TODO: use json_encode
  *
  * @global array
  * @global string
+ * @param  int $album  The album/gallery ID.
+ * @return void
+ */
+function Roundabout_hjs()
+{
+    global $pth, $hjs;
+    static $again = false;
+
+    if ($again) {
+	return;
+    }
+    include_once $pth['folder']['plugins'] . 'jquery/jquery.inc.php';
+    include_jQuery();
+    $hjs .= tag('link rel="stylesheet" href="' . $pth['folder']['plugins']
+		. 'roundabout/css/colorbox.css" type="text/css"');
+    include_jQueryPlugin('jCarousel', $pth['folder']['plugins']
+			 . 'roundabout/lib/carousel-0.9.3.js');
+    include_jQueryPlugin('colorbox', $pth['folder']['plugins']
+			 . 'roundabout/lib/jquery.colorbox-min.js');
+    $again = true;
+}
+
+
+/**
+ * Returns the script to initialize a roundabout.
+ *
  * @global string
  * @global array
  * @param  int $album  The album/gallery ID.
  * @return void
  */
-function Roundabout_js($album)
+function Roundabout_init($album)
 {
-    global $pth, $hjs, $sn, $plugin_cf;
-    static $again = false;
+    global $sn, $plugin_cf;
 
-    if (!$again) {
-	include_once $pth['folder']['plugins'] . 'jquery/jquery.inc.php';
-	include_jQuery();
-	$hjs .= tag('link rel="stylesheet" href="' . $pth['folder']['plugins']
-		    . 'roundabout/css/colorbox.css" type="text/css"');
-	include_jQueryPlugin('jCarousel', $pth['folder']['plugins']
-			     . 'roundabout/lib/carousel-0.9.3.js');
-	include_jQueryPlugin('colorbox', $pth['folder']['plugins']
-			     . 'roundabout/lib/jquery.colorbox-min.js');
-	$again = true;
-    }
     $pcf = $plugin_cf['roundabout'];
     $show_title = $pcf['show_title'] ? 'true' : 'false';
     //$show_buttons = $pcf['show_buttons'] ? 'true' : 'false';
     $json = "$sn?&roundabout_json=$album";
     $imgdir = ROUNDABOUT_GALLERY_FOLDER . 'images/';
-    $hjs .= <<<SCRIPT
+    return <<<SCRIPT
 <script type="text/javascript">
 /* <![CDATA[ */
 jQuery(function() {
@@ -174,9 +188,10 @@ function Roundabout($album)
 {
     global $plugin_tx;
 
-    Roundabout_js($album);
+    Roundabout_hjs();
     $o = '<div id="roundabout_' . $album . '" class="roundabout"><noscript><div>'
-	. $plugin_tx['roundabout']['message_noscript'] . '</div></noscript></div>';
+	. $plugin_tx['roundabout']['message_noscript'] . '</div></noscript></div>'
+	. Roundabout_init($album);
     return $o;
 }
 
