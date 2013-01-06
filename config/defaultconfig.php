@@ -1,7 +1,5 @@
 <?php
 
-$plugin_cf['roundabout']['utf8-marker']="äöüß";
-
 $plugin_cf['roundabout']['gallery_folder']="content/plugins/fotogalerie/";
 $plugin_cf['roundabout']['gallery_separator']="§§§";
 
@@ -13,7 +11,6 @@ $plugin_cf['roundabout']['perspective']="30";
 $plugin_cf['roundabout']['dynamic']="60";
 
 $plugin_cf['roundabout']['show_title']="1";
-//$plugin_cf['roundabout']['show_buttons']="0";
 
 $plugin_cf['roundabout']['reflection']="0";
 $plugin_cf['roundabout']['reflection_start']="50";
