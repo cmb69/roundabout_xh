@@ -69,15 +69,15 @@ function Roundabout_systemCheck()
     $o = tag('hr') . '<h4>' . $ptx['syscheck_title'] . '</h4>'
 	. (version_compare(PHP_VERSION, $phpVersion) >= 0 ? $ok : $fail)
 	. '&nbsp;&nbsp;' . sprintf($ptx['syscheck_phpversion'], $phpVersion)
-	. tag('br') . tag('br');
+	. tag('br');
     foreach (array() as $ext) {
 	$o .= (extension_loaded($ext) ? $ok : $fail)
 	    . '&nbsp;&nbsp;' . sprintf($ptx['syscheck_extension'], $ext) . tag('br');
     }
     $o .= (!get_magic_quotes_runtime() ? $ok : $fail)
-	. '&nbsp;&nbsp;' . $ptx['syscheck_magic_quotes'] . tag('br');
+	. '&nbsp;&nbsp;' . $ptx['syscheck_magic_quotes'] . tag('br') . tag('br');
     $o .= (strtoupper($tx['meta']['codepage']) == 'UTF-8' ? $ok : $warn)
-	. '&nbsp;&nbsp;' . $ptx['syscheck_encoding'] . tag('br') . tag('br');
+	. '&nbsp;&nbsp;' . $ptx['syscheck_encoding'] . tag('br');
     $o .= (file_exists($pth['folder']['plugins'].'jquery/jquery.inc.php') ? $ok : $fail)
 	. '&nbsp;&nbsp;' . $ptx['syscheck_jquery'] . tag('br') . tag('br');
     foreach (array('config/', 'css/', 'languages/') as $folder) {

@@ -1,11 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
-<!-- utf8-marker: äöüß -->
-<html>
+<html lang="en">
 
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<meta name="content-language" content="de">
 <title>Roundabout_XH - Manual</title>
 <link rel="stylesheet" type="text/css" href="./stylesheet.css">
 </head>
@@ -13,9 +11,9 @@
 <body>
 
 <h1>Roundabout_XH - a CMSimple_XH Plugin</h1>
-<img src="../roundabout.png" style="display:block; float:left; margin-right:10px">
+<img src="../roundabout.png" style="float:left; margin-right: 1em">
 <p>Roundabout_XH (aka. "Dances with galleries") displays image galleries as a carousel.
-It does so with Javascript only – no Flash or similar plugin is required.
+It does so with JavaScript only – no Flash or similar plugin is required.
 It has no built-in facilities for managing those galleries; instead it uses galleries created with
 <a href="http://ge-webdesign.de/cmsimpleplugins/?Modifizierte_Plugins/KissGallery_XH">KissGallery_XH</a> or
 <a href="http://ge-webdesign.de/cmsimpleplugins/?Eigene_Plugins/FotoGalerie_XH">FotoGalerie_XH</a>.</p>
@@ -33,25 +31,23 @@ It has no built-in facilities for managing those galleries; instead it uses gall
 
 <div id="body">
 
-<p><strong>Please do read this documentation! Support might not be given otherwise.
-It's generally a good idea to read the documentation,
+<p><strong>Please do read this documentation
 <em>before</em> you encounter any problems!</strong></p>
 
 <h2><a name="notice">Important Notice</a></h2>
 <p><strong>Roundabout_XH couldn't be tested so far in various environments.
-It is a so called BETA version. Use with caution!</strong></p>
+It is a so called release candidate. Use with caution!</strong></p>
 <div class="toplink"><a href="#">back to top</a></div>
 
 <h2><a name="requirements">Requirements</a></h2>
 <p>Roundabout_XH is a plugin for CMSimple_XH.
-It requires a UTF-8 encoded version,
-<a href="http://www.cmsimple-xh.com/wiki/doku.php/plugins:jquery4cmsimple">jQuery4CMSimple</a>
-and Javascript to be enabled in the visitors browser.</p>
+It requires a UTF-8 encoded version and
+<a href="http://www.cmsimple-xh.org/wiki/doku.php/extend:jquery4cmsimple">jQuery4CMSimple</a>.</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
 <h2><a name="installation">Installation</a></h2>
 <p>The installation is done as with many other CMSimple_XH plugins.
-See the <a href="http://www.cmsimple-xh.com/wiki/doku.php/manuals:users_manual:plugins:installation">
+See the <a href="http://www.cmsimple-xh.org/wiki/doku.php/installation">
 CMSimple_XH wiki</a> for further details.</p>
 <ol>
 <li><strong>Backup the data on your server.</strong></li>
@@ -66,22 +62,22 @@ CMSimple_XH wiki</a> for further details.</p>
 <p>The plugin's configuration is done as with many other
 CMSimple_XH plugins in the website's back-end.
 Select "Roundabout" from "Plugins".</p>
-<p>You can change the default settings of Roundabout_XH in "Plugin Config".
+<p>You can change the default settings of Roundabout_XH in "Config".
 Hints for the options will be displayed
 when hovering over the help icon with your mouse.
 The most important settings are "gallery folder" and "gallery separator";
 the default is configured for FotoGalerie_XH.
 Change it, if you have changed the storage folder of Fotogalerie_XH,
 or you want to use Roundabout_XH with KissGallery_XH.</p>
-<p>Localization is done in "Plugin Language".
+<p>Localization is done in "Language".
 You can translate the character strings to your own language,
 or customize them according to your needs.</p>
-<p>The look of Roundabout_XH can be customized in "Plugin Stylesheet".</p>
+<p>The look of Roundabout_XH can be customized in "Stylesheet".</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
 <h2><a name="usage">Usage</a></h2>
 <p>To show a carousel with all images of a gallery, just call roundabout() on a page
-with the gallery ID (= album ID) as parameter, e.g.:</p>
+with the gallery ID resp. album ID as parameter, e.g.:</p>
 <pre>{{{PLUGIN:roundabout(1);}}}</pre>
 <p>The result looks similar to the following screenshot:</p>
 <p><img src="screenshot.jpg" alt="screenshot" width="100%"></p>
@@ -89,10 +85,11 @@ with the gallery ID (= album ID) as parameter, e.g.:</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
 <h2><a name="limitations">Limitations</a></h2>
-<p>It's not possible to call roundabout() from the template.</p>
+<p>To be able to see the gallery, JavaScript has to be enabled in the visitor's browser.
+Otherwise a message will be displayed, which can be configured in the lanugage settings.</p>
 <p>The same gallery must not be called more than once on any page
-(no matter if it's called from the content, a newsbox or a co-content etc.)</p>
-<p>Roundabout_XH currently relies on the data and images of the gallery to be stored in the same parent folder.</p>
+(no matter if it's called from the content, a newsbox or the template).</p>
+<p>Roundabout_XH relies on the data and images of the gallery to be stored in the same parent folder.</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
 <h2><a name="license">License</a></h2>
@@ -107,18 +104,18 @@ Slovak translation &copy; 2012 Dr. Martin Sereday</p>
 <h2><a name="credits">Credits</a></h2>
 <p>Roundabout_XH was inspired by <a href="http://simplesolutions.dk">Jerry's</a> Gallery Collection series.
 Many thanks for having the great idea of creating alternative gallery viewers.</p>
-<p>Roundabout_XH is powered by <a href="http://www.jcarousel.de/">jQuery Carousel</a>.
-Many thanks to Erik Stelzer for publishing this nice jQuery plugin under MIT license.</p>
-<p>Roundabout_XH uses <a href="http://jacklmoore.com/colorbox/">Colorbox</a>.
-Many thanks to Jack Moore for developing this fine jQuery plugin and distributing it under MIT license.</p>
+<p>Roundabout_XH is powered by <a href="http://www.jcarousel.de/">jQuery Carousel</a>
+and <a href="http://jacklmoore.com/colorbox/">Colorbox</a>.
+Many thanks to Erik Stelzer resp. Jack Moore for publishing these nice jQuery plugins under MIT license.</p>
 <p>The plugin icon is designed by <a href="http://schollidesign.deviantart.com/">schollidesign</a>.
 Many thanks for publishing this icon under GPL.</p>
 <p>This plugin uses free applications icons from <a href="http://www.aha-soft.com/">Aha-Soft</a>.
 Many thanks for making these icons freely available.</p>
 <!--<p>Many thanks to the community at the <a href="http://www.cmsimpleforum.com">CMSimple forum</a>-->
 <!--for tips, suggestions and testing.</p>-->
-<p>And last but not least many thanks to all developers of
-<a href="http://www.cmsimple-xh.com">CMSimple_XH</a>
+<p>And last but not least many thanks <a href="http://harteg.dk/">Peter Harteg</a>,
+the "father" of CMSimple, and to all developers of
+<a href="http://www.cmsimple-xh.org/">CMSimple_XH</a>,
 without whom this amazing CMS wouldn't exist.</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
