@@ -97,27 +97,19 @@ function Roundabout_json($album) // TODO: use json_encode
  * Includes the JS and CSS to the <head>.
  *
  * @global array
- * @global string
  * @param  int $album  The album/gallery ID.
  * @return void
  */
 function Roundabout_hjs()
 {
-    global $pth, $hjs;
-    static $again = false;
+    global $pth;
 
-    if ($again) {
-	return;
-    }
     include_once $pth['folder']['plugins'] . 'jquery/jquery.inc.php';
     include_jQuery();
-    $hjs .= tag('link rel="stylesheet" href="' . $pth['folder']['plugins']
-		. 'roundabout/css/colorbox.css" type="text/css"');
     include_jQueryPlugin('jCarousel', $pth['folder']['plugins']
 			 . 'roundabout/lib/carousel-0.9.3.js');
     include_jQueryPlugin('colorbox', $pth['folder']['plugins']
 			 . 'roundabout/lib/jquery.colorbox-min.js');
-    $again = true;
 }
 
 
