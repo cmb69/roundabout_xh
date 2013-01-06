@@ -1,6 +1,5 @@
 <?php
 
-	$plugin_cf['roundabout']['utf8-marker']="äöüß";
 	$plugin_cf['roundabout']['gallery_folder']="content/plugins/kissgallery/";
 	$plugin_cf['roundabout']['gallery_separator']="#";
 	$plugin_cf['roundabout']['size_width']="600";
