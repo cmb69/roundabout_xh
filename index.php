@@ -132,6 +132,10 @@ function Roundabout_init($album)
 {
     global $sn, $plugin_cf;
 
+    $fn = ROUNDABOUT_GALLERY_FOLDER . 'data/photo.txt';
+    if (!is_readable($fn)) {
+	e('cntopen', 'file', $fn);
+    }
     $pcf = $plugin_cf['roundabout'];
     $show_title = $pcf['show_title'] ? 'true' : 'false';
     //$show_buttons = $pcf['show_buttons'] ? 'true' : 'false';
