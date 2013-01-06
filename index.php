@@ -9,6 +9,9 @@
 // utf8-marker: äöüß
 
 
+define('ROUNDABOUT_VERSION', '1beta2');
+
+
 define('ROUNDABOUT_FIELD_ID', 0);
 define('ROUNDABOUT_FIELD_NUM', 1);
 define('ROUNDABOUT_FIELD_ALBUM', 2);
