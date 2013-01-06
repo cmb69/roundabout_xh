@@ -45,10 +45,10 @@ function Roundabout_photos($album)
     if (is_null($recs)) {
 	$pcf = $plugin_cf['roundabout'];
 	$fn = ROUNDABOUT_GALLERY_FOLDER . 'data/photo.txt';
-	$lines = file($fn, FILE_IGNORE_NEW_LINES);
+	$lines = file($fn);
 	$recs = array();
 	foreach ($lines as $line) {
-	    $recs[] = explode($pcf['gallery_separator'], $line);
+	    $recs[] = explode($pcf['gallery_separator'], rtrim($line));
 	}
     }
     $filter = create_function('$elt',
