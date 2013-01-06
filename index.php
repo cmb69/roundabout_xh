@@ -50,6 +50,7 @@ function Roundabout_photos($album)
 	foreach ($lines as $line) {
 	    $recs[] = explode($pcf['gallery_separator'], rtrim($line));
 	}
+	sort($recs);
     }
     $filter = create_function('$elt',
 			      'return $elt[' . ROUNDABOUT_FIELD_ALBUM . '] == '
