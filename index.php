@@ -203,4 +203,11 @@ if (isset($_GET['roundabout_json']) && is_numeric($_GET['roundabout_json'])) {
     Roundabout_json(intval($_GET['roundabout_json']));
 }
 
+/*
+ * Initialize plugin, if template_call is set.
+ */
+if ($plugin_cf['roundabout']['template_call']) {
+    Roundabout_hjs();
+}
+
 ?>

@@ -27,5 +27,6 @@ $plugin_tx['roundabout']['cf_reflection_end']="Strength of the effect at the end
 $plugin_tx['roundabout']['cf_overlay_perspective']="Strength of the overlay for the images in the background (in percent)";
 $plugin_tx['roundabout']['cf_overlay_global']="Strength of the overlay for all images (in percent)";
 $plugin_tx['roundabout']['cf_overlay_color']="Color of the overlay (as CSS color)";
+$plugin_tx['roundabout']['cf_template_call']="Whether the plugin is called from the template: \"1\" (yes) or \"0\" (no).";
 
 ?>

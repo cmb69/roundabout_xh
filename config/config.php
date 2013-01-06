@@ -16,5 +16,6 @@
 	$plugin_cf['roundabout']['overlay_perspective']="60";
 	$plugin_cf['roundabout']['overlay_global']="0";
 	$plugin_cf['roundabout']['overlay_color']="#ffffff";
+	$plugin_cf['roundabout']['template_call']="0";
 
 ?>
