@@ -86,7 +86,7 @@ function Roundabout_json($album) // TODO: use json_encode
 	if ($i < count($albums) - 1) {$o .= ', ';}
     }
     $o .= ']' . "\n" . '}' . "\n";
-    header('Content-Type: text/plain; charset=UTF-8');
+    header('Content-Type: application/json; charset=UTF-8');
     echo $o;
     exit;
 }
