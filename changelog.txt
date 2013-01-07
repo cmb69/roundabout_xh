@@ -1,2 +1,13 @@
+Version 1rc1 - released 2013-01-07
+cmb     fixed bug where images were not properly sorted
+cmb     split gallery_folder to gallery_data and gallery_images (suggested by Joe)
+cmb     added config option template_call to allow calling Roundabout() from the template
+cmb     modified to deliver JSON directly instead of "caching" in a file
+cmb     updated to ColorBox 1.3.20.2
+cmb     cleaned up and improved code
+cmb     updated English user manual
+cmb     added German localization and user manual
+cmb     added Czech, Danish and Slovak localization (contributed by oldnema, maeg resp. Tata)
+
 Version 1beta1 - released 2012-03-02
 cmb	inital release
