@@ -65,28 +65,30 @@ function Roundabout_photos($album)
  * @param  int $album  The album/gallery ID.
  * @return void
  */
-function Roundabout_json($album) // TODO: use json_encode
+function Roundabout_json($album)
 {
     global $pth, $plugin_cf;
 
     $pcf = $plugin_cf['roundabout'];
     $fn = ROUNDABOUT_GALLERY_FOLDER . 'images/thumbs/';
-    $o = '{' . "\n" . '    "items": [';
+    $items = array();
     $albums = Roundabout_photos($album);
     foreach ($albums as $i => $photo) {
-	$o .= '{' . "\n"
-	    . "\t" . '"id": "' . $photo[ROUNDABOUT_FIELD_ID] . '",' . "\n"
-	    . "\t" . '"bez": "img' . $photo[ROUNDABOUT_FIELD_ID] . '",' . "\n"
-	    . "\t" . '"src": "' . $fn . $photo[ROUNDABOUT_FIELD_ID] . 't.jpg",' . "\n"
-	    . "\t" . '"template": "' . '",' . "\n"
-	    . "\t" . '"title": "' . addcslashes($photo[ROUNDABOUT_FIELD_DESC], "\\\"") . '",' . "\n"
-	    . "\t" . '"description": "' . '"' . "\n"
-	    . '    }';
-	if ($i < count($albums) - 1) {$o .= ', ';}
+	$item = array(
+	    'id' => $photo[ROUNDABOUT_FIELD_ID],
+	    'bez' => "img{$photo[ROUNDABOUT_FIELD_ID]}",
+	    'src' => "$fn{$photo[ROUNDABOUT_FIELD_ID]}t.jpg",
+	    'template' => '',
+	    'title' => $photo[ROUNDABOUT_FIELD_DESC],
+	    'description' => ''
+	);
+	$items[] = $item;
     }
-    $o .= ']' . "\n" . '}' . "\n";
+    if (!function_exists('json_encode')) {
+	include_once "{$pth['folder']['plugins']}roundabout/json_encode.php";
+    }
     header('Content-Type: application/json; charset=UTF-8');
-    echo $o;
+    echo json_encode(array('items' => $items));
     exit;
 }
 
