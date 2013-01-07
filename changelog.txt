@@ -1,10 +1,2 @@
-TODO
-    2 separate folders (images/data) (reported by Joe)
-    option dynamic must be greater 0 (reported by Joe)
-    improve onPicClick
-    showButtons true
-    include different Colorbox Styles (config option)
-    view whole gallery in Colorbox?
-
 Version 1beta1 - released 2012-03-02
 cmb	inital release

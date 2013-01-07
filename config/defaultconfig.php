@@ -1,6 +1,7 @@
 <?php
 
-$plugin_cf['roundabout']['gallery_folder']="content/plugins/fotogalerie/";
+$plugin_cf['roundabout']['gallery_data']="content/plugins/fotogalerie/data/";
+$plugin_cf['roundabout']['gallery_images']="content/plugins/fotogalerie/images/";
 $plugin_cf['roundabout']['gallery_separator']="§§§";
 
 $plugin_cf['roundabout']['size_width']="600";

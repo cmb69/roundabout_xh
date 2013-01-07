@@ -70,7 +70,7 @@ function Roundabout_systemCheck()
 	. (version_compare(PHP_VERSION, $phpVersion) >= 0 ? $ok : $fail)
 	. '&nbsp;&nbsp;' . sprintf($ptx['syscheck_phpversion'], $phpVersion)
 	. tag('br');
-    foreach (array() as $ext) {
+    foreach (array('pcre') as $ext) {
 	$o .= (extension_loaded($ext) ? $ok : $fail)
 	    . '&nbsp;&nbsp;' . sprintf($ptx['syscheck_extension'], $ext) . tag('br');
     }
@@ -80,10 +80,16 @@ function Roundabout_systemCheck()
 	. '&nbsp;&nbsp;' . $ptx['syscheck_encoding'] . tag('br');
     $o .= (file_exists($pth['folder']['plugins'].'jquery/jquery.inc.php') ? $ok : $fail)
 	. '&nbsp;&nbsp;' . $ptx['syscheck_jquery'] . tag('br') . tag('br');
+    $folders = array(ROUNDABOUT_GALLERY_DATA, ROUNDABOUT_GALLERY_IMAGES);
+    foreach ($folders as $folder) {
+	$o .= (is_dir($folder) ? $ok : $fail)
+	    . '&nbsp;&nbsp;' . sprintf($ptx['syscheck_exists'], $folder) . tag('br');
+    }
+    $o .= tag('br');
+    $folders = array();
     foreach (array('config/', 'css/', 'languages/') as $folder) {
 	$folders[] = $pth['folder']['plugins'] . 'roundabout/' . $folder;
     }
-    $folders[] = ROUNDABOUT_GALLERY_FOLDER;
     foreach ($folders as $folder) {
 	$o .= (is_writable($folder) ? $ok : $warn)
 	    . '&nbsp;&nbsp;' . sprintf($ptx['syscheck_writable'], $folder) . tag('br');

@@ -8,9 +8,11 @@ $plugin_tx['roundabout']['syscheck_extension']="Extension '%s' loaded";
 $plugin_tx['roundabout']['syscheck_encoding']="Encoding 'UTF-8' configured";
 $plugin_tx['roundabout']['syscheck_magic_quotes']="Magic quotes runtime off";
 $plugin_tx['roundabout']['syscheck_jquery']="<a href=\"http://www.cmsimple-xh.org/wiki/doku.php/extend:jquery4cmsimple\">jQuery4CMSimple plugin</a> installed";
+$plugin_tx['roundabout']['syscheck_exists']="Folder '%s' exists";
 $plugin_tx['roundabout']['syscheck_writable']="Folder '%s' writable";
 
-$plugin_tx['roundabout']['cf_gallery_folder']="The path of the gallery folder relative to the CMSimple root folder, e.g. content/plugins/kissgallery/";
+$plugin_tx['roundabout']['cf_gallery_data']="The path of the gallery data folder relative to the CMSimple root folder, e.g. \"content/plugins/kissgallery/data/\"";
+$plugin_tx['roundabout']['cf_gallery_images']="The path of the gallery images folder relative to the CMSimple root folder, e.g. \"content/plugins/kissgallery/images/\"";
 $plugin_tx['roundabout']['cf_gallery_separator']="The character that separates the fields in data files, i.e. \"#\" for KissGallery_XH and \"§§§\" for FotoGalerie_XH.";
 $plugin_tx['roundabout']['cf_size_width']="The width of the roundabout (in pixels)";
 $plugin_tx['roundabout']['cf_size_height']="The height of the roundabout (in pixels)";

@@ -23,8 +23,13 @@ define('ROUNDABOUT_FIELD_MIME', 5);
 define('ROUNDABOUT_FIELD_DESC', 6);
 
 
-define('ROUNDABOUT_GALLERY_FOLDER',
-       rtrim($pth['folder']['base'] . $plugin_cf['roundabout']['gallery_folder'],
+define('ROUNDABOUT_GALLERY_DATA',
+       rtrim($pth['folder']['base'] . $plugin_cf['roundabout']['gallery_data'],
+	     '/')
+       . '/');
+
+define('ROUNDABOUT_GALLERY_IMAGES',
+       rtrim($pth['folder']['base'] . $plugin_cf['roundabout']['gallery_images'],
 	     '/')
        . '/');
 
@@ -44,7 +49,7 @@ function Roundabout_photos($album)
 
     if (is_null($recs)) {
 	$pcf = $plugin_cf['roundabout'];
-	$fn = ROUNDABOUT_GALLERY_FOLDER . 'data/photo.txt';
+	$fn = ROUNDABOUT_GALLERY_DATA . 'photo.txt';
 	$lines = file($fn);
 	$recs = array();
 	foreach ($lines as $line) {
@@ -70,7 +75,7 @@ function Roundabout_json($album)
     global $pth, $plugin_cf;
 
     $pcf = $plugin_cf['roundabout'];
-    $fn = ROUNDABOUT_GALLERY_FOLDER . 'images/thumbs/';
+    $fn = ROUNDABOUT_GALLERY_IMAGES . 'thumbs/';
     $items = array();
     $albums = Roundabout_photos($album);
     foreach ($albums as $i => $photo) {
@@ -125,14 +130,14 @@ function Roundabout_init($album)
 {
     global $sn, $plugin_cf;
 
-    $fn = ROUNDABOUT_GALLERY_FOLDER . 'data/photo.txt';
+    $fn = ROUNDABOUT_GALLERY_DATA . 'photo.txt';
     if (!is_readable($fn)) {
 	e('cntopen', 'file', $fn);
     }
     $pcf = $plugin_cf['roundabout'];
     $show_title = $pcf['show_title'] ? 'true' : 'false';
     $json = "$sn?&roundabout_json=$album";
-    $imgdir = ROUNDABOUT_GALLERY_FOLDER . 'images/';
+    $imgdir = ROUNDABOUT_GALLERY_IMAGES;
     return <<<SCRIPT
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -155,7 +160,7 @@ jQuery(function() {
 	onPicClick: function(base, imageBlock, i) {
 	    base.stopCarousel();
 	    jQuery.colorbox({
-		href: '$imgdir' + base.image[i].id + '.jpg',
+		href: "$imgdir" + base.image[i].id + ".jpg",
 		title: base.image[i].title,
 		onClosed: function() {
 		    base.startCarousel();

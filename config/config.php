@@ -1,6 +1,7 @@
 <?php
 
-	$plugin_cf['roundabout']['gallery_folder']="content/plugins/kissgallery/";
+	$plugin_cf['roundabout']['gallery_data']="content/plugins/kissgallery/data/";
+	$plugin_cf['roundabout']['gallery_images']="content/plugins/kissgallery/images/";
 	$plugin_cf['roundabout']['gallery_separator']="#";
 	$plugin_cf['roundabout']['size_width']="600";
 	$plugin_cf['roundabout']['size_height']="250";
