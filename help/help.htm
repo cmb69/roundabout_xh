@@ -67,7 +67,7 @@ Hints for the options will be displayed
 when hovering over the help icon with your mouse.
 The most important settings are "gallery folder" and "gallery separator";
 the default is configured for FotoGalerie_XH.
-Change it, if you have changed the storage folder of Fotogalerie_XH,
+Change it, if you have changed the storage folder of FotoGalerie_XH,
 or you want to use Roundabout_XH with KissGallery_XH.</p>
 <p>Localization is done in "Language".
 You can translate the character strings to your own language,
@@ -76,19 +76,19 @@ or customize them according to your needs.</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
 <h2><a name="usage">Usage</a></h2>
-<p>To show a carousel with all images of a gallery, just call roundabout() on a page
-with the gallery ID resp. album ID as parameter, e.g.:</p>
+<p>To show a carousel with all images of a gallery, just call the plugin
+with the gallery ID resp. album ID as parameter, e.g. on a page:</p>
 <pre>{{{PLUGIN:roundabout(1);}}}</pre>
-<p>The result looks similar to the following screenshot:</p>
-<p><img src="screenshot.jpg" alt="screenshot" width="100%"></p>
-<p>Click on any of the images and the full sized image will be displayed in a lightbox.</p>
+<p>Or in the template:</p>
+<pre>&lt;?php echo roundabout(1);?&gt;</pre>
+<p>Clicking any of the images will display the full sized image in a lightbox.</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
 <h2><a name="limitations">Limitations</a></h2>
-<p>To be able to see the gallery, JavaScript has to be enabled in the visitor's browser.
+<p>To be able to see the roundabout, JavaScript has to be enabled in the visitor's browser.
 Otherwise a message will be displayed, which can be configured in the lanugage settings.</p>
 <p>The same gallery must not be called more than once on any page
-(no matter if it's called from the content, a newsbox or the template).</p>
+(no matter whether it's called from the content, a newsbox or the template).</p>
 <p>Roundabout_XH relies on the data and images of the gallery to be stored in the same parent folder.</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
@@ -102,10 +102,11 @@ Slovak translation &copy; 2012 Dr. Martin Sereday</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
 <h2><a name="credits">Credits</a></h2>
-<p>Roundabout_XH was inspired by <a href="http://simplesolutions.dk">Jerry's</a> Gallery Collection series.
-Many thanks for having the great idea of creating alternative gallery viewers.</p>
+<p>Roundabout_XH was inspired by <a href="http://simplesolutions.dk">Jerry Jakobsfeld's</a> Gallery Collection series.
+Many thanks for having the great idea of creating alternative gallery viewers,
+that use the same back-end.</p>
 <p>Roundabout_XH is powered by <a href="http://www.jcarousel.de/">jQuery Carousel</a>
-and <a href="http://jacklmoore.com/colorbox/">Colorbox</a>.
+and <a href="http://jacklmoore.com/colorbox/">ColorBox</a>.
 Many thanks to Erik Stelzer resp. Jack Moore for publishing these nice jQuery plugins under MIT license.</p>
 <p>The plugin icon is designed by <a href="http://schollidesign.deviantart.com/">schollidesign</a>.
 Many thanks for publishing this icon under GPL.</p>
