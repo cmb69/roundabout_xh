@@ -52,10 +52,8 @@ function Roundabout_photos($album)
 	}
 	sort($recs);
     }
-    $filter = create_function('$elt',
-			      'return $elt[' . ROUNDABOUT_FIELD_ALBUM . '] == '
-			      . $album . ';');
-    return array_values(array_filter($recs, $filter));
+    $filter = 'return $elt[' . ROUNDABOUT_FIELD_ALBUM . '] == ' . $album . ';';
+    return array_values(array_filter($recs, create_function('$elt', $filter)));
 }
 
 
