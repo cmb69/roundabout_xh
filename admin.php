@@ -31,7 +31,7 @@ function Roundabout_version()
         . tag('img src="' . $pth['folder']['plugins']
 	      . 'roundabout/roundabout.png" style="float:left; margin-right: 1em"')
 	. '<p>Version: ' . ROUNDABOUT_VERSION . '</p>'
-	. '<p>Copyright &copy; 2012 <a href="http://3-magi.net">Christoph M. Becker</a></p>'
+	. '<p>Copyright &copy; 2012-2013 <a href="http://3-magi.net">Christoph M. Becker</a></p>'
 	. '<p>Roundabout_XH is powered by <a href="http://www.jcarousel.de/">jQuery Carousel</a>'
 	. ' and <a href="http://www.jacklmoore.com/colorbox">ColorBox</a>.</p>'
 	. '<p style="text-align: justify">This program is free software: you can redistribute it and/or modify'
