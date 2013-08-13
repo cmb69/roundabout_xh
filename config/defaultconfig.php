@@ -1,5 +1,7 @@
 <?php
 
+$plugin_cf['roundabout']['template_call']="";
+
 $plugin_cf['roundabout']['gallery_data']="content/plugins/fotogalerie/data/";
 $plugin_cf['roundabout']['gallery_images']="content/plugins/fotogalerie/images/";
 $plugin_cf['roundabout']['gallery_separator']="§§§";
