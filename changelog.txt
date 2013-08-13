@@ -1,3 +1,8 @@
+Version 1 - released 2013-08-13
+cmb     added missing template_call configuration option
+cmb     fixed incompatibility with jQuery 1.9
+cmb     added version.nfo
+
 Version 1rc1 - released 2013-01-07
 cmb     fixed bug where images were not properly sorted
 cmb     split gallery_folder to gallery_data and gallery_images (suggested by Joe)

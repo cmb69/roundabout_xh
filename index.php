@@ -11,7 +11,7 @@
  */
 
 
-define('ROUNDABOUT_VERSION', '1rc1');
+define('ROUNDABOUT_VERSION', '1');
 
 
 define('ROUNDABOUT_FIELD_ID', 0);
