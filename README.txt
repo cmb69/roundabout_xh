@@ -1,4 +1,4 @@
-Roundabout_XH -- a CMSimple_XH plugin
+﻿Roundabout_XH -- a CMSimple_XH plugin
 Copyright (C) 2012-2013 Christoph M. Becker
 
 This program is free software: you can redistribute it and/or modify
